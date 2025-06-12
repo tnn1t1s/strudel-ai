@@ -84,7 +84,7 @@ ${JSON.stringify(schema, null, 2)}`;
 
   parseResponse(content) {
     // Parse OpenAI response and extract code if present
-    const codeRegex = /```(?:javascript|js)?\n?([\s\S]*?)```/;
+    const codeRegex = /```(?:javascript|js|strudel)?\n?([\s\S]*?)```/;
     const match = content.match(codeRegex);
     
     const text = content.replace(codeRegex, '').trim();
