@@ -95,14 +95,14 @@ I can see your current patterns and will generate Strudel code for you!`,
   };
 
   return (
-    <div className="flex flex-col h-full max-h-[320px]" style={{ fontFamily }}>
+    <div className="px-4 flex flex-col w-full h-full text-foreground" style={{ fontFamily }}>
       {/* Header */}
-      <div className="px-4 py-2 border-b border-gray-600">
+      <div className="py-2">
         <h3 className="text-sm font-medium text-foreground">🤖 AI Assistant</h3>
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-4 py-2 space-y-3">
+      <div className="min-h-0 max-h-full grow overflow-auto py-2 space-y-3">
         {messages.map((message) => (
           <div key={message.id} className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
             <div className={`max-w-[80%] rounded-lg p-3 ${
@@ -140,7 +140,7 @@ I can see your current patterns and will generate Strudel code for you!`,
       </div>
 
       {/* Input */}
-      <form onSubmit={handleSubmit} className="p-4 border-t border-gray-600">
+      <form onSubmit={handleSubmit} className="py-2">
         <div className="flex space-x-2">
           <input
             ref={inputRef}

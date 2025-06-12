@@ -55,7 +55,7 @@ export function VerticalPanel({ context }) {
             <PanelActionButton settings={settings} />
           </div>
 
-          <div className="overflow-auto h-full">
+          <div className="overflow-auto h-full w-full">
             <PanelContent context={context} tab={tab} />
           </div>
         </div>
