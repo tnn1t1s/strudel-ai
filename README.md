@@ -1,7 +1,5 @@
 # Strudel-AI
 
-![Strudel-AI Interface](https://github.com/user-attachments/assets/screenshot-placeholder)
-
 **AI-Powered Live Coding for Electronic Music**
 
 Strudel-AI is a revolutionary fork of [Strudel](https://github.com/tidalcycles/strudel) that brings artificial intelligence to live coding music creation. Combining the power of TidalCycles pattern language with real-time AI assistance, Strudel-AI enables musicians to create electronic music through natural language conversation.
