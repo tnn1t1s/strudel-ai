@@ -14,6 +14,13 @@ This is a fork of Strudel (https://strudel.cc/), a Tidal-based live coding envir
 - Always create PR for user with `gh pr create`
 - **NEVER EVER USE CONDITIONAL HANDLING - Always plan for the working path**
 
+## Visual Layout Problems: Logic-First Approach
+- **Frame all visual layout problems as logic problems**
+- Seek all information and context you can collect before acting
+- Read ALL related component files completely for pattern matching
+- Present recommendation to user before proceeding with changes
+- Don't blame "visual constraints" - analyze code systematically
+
 ## Key Areas for AI Enhancement
 - Pattern generation and suggestion
 - Sample selection and arrangement
