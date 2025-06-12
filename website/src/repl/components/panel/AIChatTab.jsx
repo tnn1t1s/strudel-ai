@@ -39,24 +39,9 @@ I can see your current patterns and will generate Strudel code for you!`,
   }, []);
 
   const getCurrentPatterns = () => {
-    // Try multiple sources for robustness
-    
-    // Primary: Use activeCode from context state
-    if (context?.activeCode) {
-      return context.activeCode;
-    }
-    
-    // Fallback: Use direct editor reference
-    if (context?.editorRef?.current?.code) {
-      return context.editorRef.current.code;
-    }
-    
-    // Last resort: CodeMirror document
-    if (context?.editorRef?.current?.editor?.state?.doc) {
-      return context.editorRef.current.editor.state.doc.toString();
-    }
-    
-    return "No patterns currently active";
+    // Direct CodeMirror access - the working path
+    const cmEditor = context.editorRef.current.editor;
+    return cmEditor.state.doc.toString();
   };
 
   const handleSubmit = async (e) => {
@@ -104,35 +89,9 @@ I can see your current patterns and will generate Strudel code for you!`,
 
 
   const injectCode = (code) => {
-    if (!context?.editorRef?.current) {
-      console.error('No editor reference available');
-      return;
-    }
-
-    const editor = context.editorRef.current;
-    
-    // Get current cursor position
-    const currentCursor = editor.getCursorLocation();
-    const currentCode = getCurrentPatterns();
-    
-    // Insert code at cursor position with proper spacing
-    const beforeCursor = currentCode.slice(0, currentCursor);
-    const afterCursor = currentCode.slice(currentCursor);
-    
-    // Add appropriate spacing
-    const needsNewlineBefore = beforeCursor && !beforeCursor.endsWith('\n');
-    const needsNewlineAfter = afterCursor && !afterCursor.startsWith('\n');
-    
-    const codeToInsert = (needsNewlineBefore ? '\n' : '') + code + (needsNewlineAfter ? '\n' : '');
-    const newCode = beforeCursor + codeToInsert + afterCursor;
-    
-    editor.setCode(newCode);
-    
-    // Position cursor after inserted code
-    const newCursorPos = currentCursor + codeToInsert.length;
-    editor.setCursorLocation(newCursorPos);
-    
-    console.log('Injected code at cursor position:', code);
+    // Use StrudelMirror's appendCode method - the working path
+    const strudelEditor = context.editorRef.current;
+    strudelEditor.appendCode('\n' + code);
   };
 
   return (
