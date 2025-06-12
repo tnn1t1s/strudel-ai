@@ -1,13 +1,13 @@
 export const SITE = {
-  title: 'Strudel',
-  description: 'Strudel is a music live coding editor that brings TidalCycles to the browser.',
+  title: 'Strudel-AI',
+  description: 'Strudel-AI is an AI-powered music live coding editor that brings TidalCycles to the browser.',
   defaultLanguage: 'en',
 };
 
 export const OPEN_GRAPH = {
   image: {
     src: 'https://strudel.cc/icon.png',
-    alt: 'Strudel Logo',
+    alt: 'Strudel-AI Logo',
   },
 };
 
