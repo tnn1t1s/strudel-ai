@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useSettings } from '@src/settings.mjs';
-import { StrudelAI } from './StrudelAI.js';
+import { LangGraphAI } from '../../ai/LangGraphAI.js';
 
 export function AIChatTab({ context }) {
   const { fontFamily } = useSettings();
@@ -9,7 +9,7 @@ export function AIChatTab({ context }) {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
-  const aiEngine = useRef(new StrudelAI());
+  const aiEngine = useRef(new LangGraphAI());
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -60,9 +60,9 @@ I can see your current patterns and will generate Strudel code for you!`,
     setIsLoading(true);
 
     try {
-      // Use sophisticated AI engine with pattern context analysis
+      // Use real AI engine with current patterns context
       const currentPatterns = getCurrentPatterns();
-      const aiResponse = await aiEngine.current.processQuery(inputValue, currentPatterns);
+      const aiResponse = await aiEngine.current.generateResponse(inputValue, { currentPatterns });
       
       const aiMessage = {
         id: Date.now() + 1,
@@ -75,10 +75,11 @@ I can see your current patterns and will generate Strudel code for you!`,
 
       setMessages(prev => [...prev, aiMessage]);
     } catch (error) {
+      console.error('AI Error:', error);
       const errorMessage = {
         id: Date.now() + 1,
         type: 'ai',
-        content: 'Sorry, I encountered an error. Please try again.',
+        content: `Error: ${error.message}`,
         timestamp: new Date().toLocaleTimeString()
       };
       setMessages(prev => [...prev, errorMessage]);

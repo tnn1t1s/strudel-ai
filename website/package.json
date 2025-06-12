@@ -22,6 +22,10 @@
     "@docsearch/react": "^3.8.3",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
+    "@langchain/anthropic": "^0.3.22",
+    "@langchain/core": "^0.3.58",
+    "@langchain/langgraph": "^0.3.1",
+    "@langchain/openai": "^0.5.13",
     "@nanostores/persistent": "^0.10.2",
     "@nanostores/react": "^0.8.4",
     "@strudel/codemirror": "workspace:*",
@@ -73,7 +77,7 @@
     "@vite-pwa/astro": "^0.5.0",
     "html-escaper": "^3.0.3",
     "sharp": "^0.33.5",
-    "workbox-window": "^7.3.0",
-    "vite-plugin-bundle-audioworklet": "workspace:*"
+    "vite-plugin-bundle-audioworklet": "workspace:*",
+    "workbox-window": "^7.3.0"
   }
 }
