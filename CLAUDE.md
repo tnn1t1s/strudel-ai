@@ -11,6 +11,8 @@ This is a fork of Strudel (https://strudel.cc/), a Tidal-based live coding envir
 - Use Python by sourcing `venv/bin/activate` for any Python components
 - Main codebase is JavaScript/TypeScript based on Strudel
 - OpenAI API keys available via `source ~/.bashrc`
+- Always create PR for user with `gh pr create`
+- **NEVER EVER USE CONDITIONAL HANDLING - Always plan for the working path**
 
 ## Key Areas for AI Enhancement
 - Pattern generation and suggestion
