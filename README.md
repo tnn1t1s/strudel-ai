@@ -1,14 +1,36 @@
-# strudel
+# Strudel-AI
 
-[![Strudel test status](https://github.com/tidalcycles/strudel/actions/workflows/test.yml/badge.svg)](https://github.com/tidalcycles/strudel/actions) [![DOI](https://zenodo.org/badge/450927247.svg)](https://doi.org/10.5281/zenodo.6659278)
+![Strudel-AI Interface](https://github.com/user-attachments/assets/screenshot-placeholder)
 
-An experiment in making a [Tidal](https://github.com/tidalcycles/tidal/) using web technologies. This software is a bit more stable now, but please continue to tread carefully.
+**AI-Powered Live Coding for Electronic Music**
 
-- Try it here: <https://strudel.cc>
+Strudel-AI is a revolutionary fork of [Strudel](https://github.com/tidalcycles/strudel) that brings artificial intelligence to live coding music creation. Combining the power of TidalCycles pattern language with real-time AI assistance, Strudel-AI enables musicians to create electronic music through natural language conversation.
+
+## ✨ Key Features
+
+- 🤖 **AI Music Assistant**: Generate Strudel patterns using natural language
+- 🎵 **Musical Intelligence**: AI understands rhythm, harmony, and electronic music styles  
+- 🔄 **Context Awareness**: AI sees your current patterns and builds musically coherent additions
+- 🎛️ **Multi-Provider Support**: OpenAI and Anthropic integration via LangChain
+- 🚀 **Real-Time Integration**: Seamlessly inject AI-generated code into your live session
+
+## 🎯 Revolutionary Workflow
+
+Instead of manually coding every pattern, simply tell the AI what you want:
+
+- *"add a 909 kick pattern"* → `sound("bd ~ ~ ~").bank("RolandTR909")`
+- *"create a bassline like Peter Hook"* → Contextual bass patterns
+- *"make it more syncopated"* → Rhythmic variations on existing patterns
+- *"add some ambient pads"* → Atmospheric textures
+
+## 🌟 Based on Strudel
+
+Built on the incredible foundation of [Strudel](https://github.com/tidalcycles/strudel) - a browser-based implementation of TidalCycles that brings live coding to web technologies.
+
+**Original Strudel:**
+- Try it: <https://strudel.cc>
 - Docs: <https://strudel.cc/learn>
-- Technical Blog Post: <https://loophole-letters.vercel.app/strudel>
-- 1 Year of Strudel Blog Post: <https://loophole-letters.vercel.app/strudel1year>
-- 2 Years of Strudel Blog Post: <https://strudel.cc/blog/#year-2>
+- Community: [TidalCycles Discord](https://discord.com/invite/HGEdXmRkzT)
 
 ## Running Locally
 
