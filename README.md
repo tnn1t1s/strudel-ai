@@ -2,7 +2,7 @@
 
 **AI-Powered Live Coding for Electronic Music**
 
-Strudel-AI is a revolutionary fork of [Strudel](https://github.com/tidalcycles/strudel) that brings artificial intelligence to live coding music creation. Combining the power of TidalCycles pattern language with real-time AI assistance, Strudel-AI enables musicians to create electronic music through natural language conversation.
+Strudel-AI is a fork of [Strudel](https://github.com/tidalcycles/strudel) that brings artificial intelligence to live coding music creation. Combining the power of TidalCycles pattern language with real-time AI assistance, Strudel-AI enables musicians to create electronic music through natural language conversation.
 
 ## ✨ Key Features
 
@@ -12,7 +12,7 @@ Strudel-AI is a revolutionary fork of [Strudel](https://github.com/tidalcycles/s
 - 🎛️ **Multi-Provider Support**: OpenAI and Anthropic integration via LangChain
 - 🚀 **Real-Time Integration**: Seamlessly inject AI-generated code into your live session
 
-## 🎯 Revolutionary Workflow
+## 🎯 AI Live Coding Workflow
 
 Instead of manually coding every pattern, simply tell the AI what you want:
 
@@ -20,10 +20,11 @@ Instead of manually coding every pattern, simply tell the AI what you want:
 - *"create a bassline like Peter Hook"* → Contextual bass patterns
 - *"make it more syncopated"* → Rhythmic variations on existing patterns
 - *"add some ambient pads"* → Atmospheric textures
+- *"create a simple break using 707 sounds that sounds liki alberto balsam by aphex twin"* → multi-track drumloop code
 
 ## 🌟 Based on Strudel
 
-Built on the incredible foundation of [Strudel](https://github.com/tidalcycles/strudel) - a browser-based implementation of TidalCycles that brings live coding to web technologies.
+Built on the foundation of [Strudel](https://github.com/tidalcycles/strudel) - a browser-based implementation of TidalCycles that brings live coding to web technologies.
 
 **Original Strudel:**
 - Try it: <https://strudel.cc>
