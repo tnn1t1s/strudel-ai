@@ -1,0 +1,71 @@
+--- src/repl/components/panel/Panel.jsx.orig	2025-06-12 18:54:40
++++ src/repl/components/panel/Panel.jsx	2025-06-12 18:54:18
+@@ -6,7 +6,7 @@
+ import { SettingsTab } from './SettingsTab';
+ import { SoundsTab } from './SoundsTab';
+ import { useLogger } from '../useLogger';
+-import { WelcomeTab } from './WelcomeTab';
++import { AIChatTab } from '../../ai/AIChatTab';
+ import { PatternsTab } from './PatternsTab';
+ import { ChevronLeftIcon, XMarkIcon } from '@heroicons/react/16/solid';
+ 
+@@ -40,12 +40,13 @@
+ 
+ export function VerticalPanel({ context }) {
+   const settings = useSettings();
+-  const { activeFooter: tab, isPanelOpen } = settings;
++  const { activeFooter: tab, isPanelOpen, panelWidth } = settings;
+ 
+   return (
+     <PanelNav
+       settings={settings}
+-      className={cx(isPanelOpen ? `min-w-[min(600px,80vw)] max-w-[min(600px,80vw)]` : 'min-w-12 max-w-12')}
++      className={cx(isPanelOpen ? '' : 'min-w-12 max-w-12')}
++      style={isPanelOpen ? { width: `${panelWidth}px`, minWidth: `${panelWidth}px`, maxWidth: `${panelWidth}px` } : undefined}
+     >
+       {isPanelOpen ? (
+         <div className={cx('flex flex-col h-full')}>
+@@ -54,7 +55,7 @@
+             <PanelActionButton settings={settings} />
+           </div>
+ 
+-          <div className="overflow-auto h-full">
++          <div className="overflow-auto h-full w-full">
+             <PanelContent context={context} tab={tab} />
+           </div>
+         </div>
+@@ -76,7 +77,7 @@
+ }
+ 
+ const tabNames = {
+-  welcome: 'intro',
++  chat: 'AI',
+   patterns: 'patterns',
+   sounds: 'sounds',
+   reference: 'reference',
+@@ -87,7 +88,7 @@
+   tabNames.files = 'files';
+ }
+ 
+-function PanelNav({ children, className, settings, ...props }) {
++function PanelNav({ children, className, settings, style, ...props }) {
+   const isHoverBehavior = settings.togglePanelTrigger === 'hover';
+   return (
+     <nav
+@@ -108,6 +109,7 @@
+       }}
+       aria-label="Menu Panel"
+       className={cx('bg-lineHighlight group overflow-x-auto', className)}
++      style={style}
+       {...props}
+     >
+       {children}
+@@ -131,7 +133,7 @@
+     case tabNames.files:
+       return <FilesTab />;
+     default:
+-      return <WelcomeTab context={context} />;
++      return <AIChatTab context={context} />;
+   }
+ }
+ 

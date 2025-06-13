@@ -51,7 +51,7 @@ export function Header({ context, embedded = false }) {
           </div>
           {!isZen && (
             <div className="space-x-2">
-              <span className="">strudel-ai</span>
+              <span className="">{import.meta.env.SITE?.title?.toLowerCase() || 'strudel'}</span>
               {!isEmbedded && isButtonRowHidden && (
                 <a href={`${baseNoTrailing}/learn`} className="text-sm opacity-25 font-medium">
                   DOCS
