@@ -5,13 +5,12 @@
   "private": true,
   "scripts": {
     "dev": "astro dev --host 0.0.0.0",
-    "dev:ai": "cp src/ai-config.ts src/config.ts && patch -p0 < src/repl/ai/panel.patch 2>/dev/null || true && astro dev --host 0.0.0.0",
+    "dev:ai": "cp src/ai-config.ts src/config.ts && cp src/ai-settings.mjs src/settings.mjs && cp src/pages/ai-index.astro src/pages/index.astro && cp src/pages/ai-embed.astro src/pages/embed.astro && patch -p0 < src/repl/ai/panel.patch 2>/dev/null || true && astro dev --host 0.0.0.0",
     "start": "astro dev",
     "build": "astro build",
-    "build:ai": "cp src/ai-config.ts src/config.ts && patch -p0 < src/repl/ai/panel.patch 2>/dev/null || true && astro build",
+    "build:ai": "cp src/ai-config.ts src/config.ts && cp src/ai-settings.mjs src/settings.mjs && cp src/pages/ai-index.astro src/pages/index.astro && cp src/pages/ai-embed.astro src/pages/embed.astro && patch -p0 < src/repl/ai/panel.patch 2>/dev/null || true && astro build",
     "preview": "astro preview --port 3009 --host 0.0.0.0",
     "astro": "astro",
-    "config:reset": "cp src/original-config.ts src/config.ts",
     "patch:apply": "patch -p0 < src/repl/ai/panel.patch",
     "patch:revert": "patch -R -p0 < src/repl/ai/panel.patch",
     "postinstall": "cp node_modules/hs2js/dist/tree-sitter.wasm public && cp node_modules/hs2js/dist/tree-sitter-haskell.wasm public"
